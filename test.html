@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script src="http://js.leapmotion.com/leap-0.4.2.js"></script>
+  </head>
+  <body>
+    <canvas style="border:1px solid black;"id="canvas" width="800px" height="600px"></canvas>
+  </body>
+  <script type="text/javascript">
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    Leap.loop({frameEventName: "animationFrame"}, function(frame) {
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+        frame.pointables.forEach(function(pointable) {
+          var position = pointable.stabilizedTipPosition;
+          var normalized = frame.interactionBox.normalizePoint(position);
+
+          var x = ctx.canvas.width * normalized[0];
+          var y = ctx.canvas.height * (1 - normalized[1]);
+
+          ctx.beginPath();
+          ctx.rect(x, y, 20, 20);
+          ctx.fill();
+        });
+    });
+  </script>
+</html>
