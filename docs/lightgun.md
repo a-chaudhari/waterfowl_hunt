@@ -1,5 +1,5 @@
 # Light Gun Mode
-This port of Duck Hunt has support for the Leap Motion Controller.  The Leap Motion Controller is lets you use your fingers as a virtual cursor to aim your gun.
+This port of Duck Hunt has support for the Leap Motion Controller.  The Leap Motion Controller lets you use your fingers as a virtual cursor to aim your gun.
 
 Simply install the drivers for the Leap Controller and plug it in.  The game will automatically detect the device and request positional data. Aim with your finger and press the `z` button on your keyboard to fire.
 
